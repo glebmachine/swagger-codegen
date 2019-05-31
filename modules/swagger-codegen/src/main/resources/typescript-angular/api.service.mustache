@@ -292,7 +292,7 @@ export class {{classname}} {
         if ({{paramName}}) {
         {{#isCollectionFormatMulti}}
             {{paramName}}.forEach((element) => {
-                {{#useHttpClient}}formParams = {{/useHttpClient}}formParams.append('{{baseName}}', <any>element){{#useHttpClient}} || formParams{{/useHttpClient}};
+                {{#useHttpClient}}formParams = {{/useHttpClient}}formParams.append('{{baseName}}', <any>element){{#useHttpClient}} as any || formParams{{/useHttpClient}};
             })
         {{/isCollectionFormatMulti}}
         {{^isCollectionFormatMulti}}
